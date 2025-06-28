@@ -1,4 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Crudzocial</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Perfil de Usuario</h1>
 
+      <form id="perfilForm">
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control">
+            <input id="nombre" class="input" type="text" required>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Apellido</label>
+          <div class="control">
+            <input id="apellido" class="input" type="text" required>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input id="email" class="input" type="email" required>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Teléfono</label>
+          <div class="control">
+            <input id="telefono" class="input" type="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">País</label>
+          <div class="control">
+            <input id="pais" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Ciudad</label>
+          <div class="control">
+            <input id="ciudad" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Dirección</label>
+          <div class="control">
+            <input id="direccion" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Código Postal</label>
+          <div class="control">
+            <input id="postal" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" class="button is-link">Actualizar</button>
+          </div>
+          <div class="control">
+            <button type="button" id="logout" class="button is-danger">Cerrar Sesión</button>
+          </div>
+        </div>
+      </form>
+
+      <hr>
+      <h2 class="subtitle">Resumen de Actividad</h2>
+      <div id="logs" class="box"></div>
+    </div>
+  </section>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>
