@@ -83,6 +83,12 @@ window.editNote = function (id) {
 
   if (!note) return;
 
+  // Seguridad: solo el dueño o el admin pueden editar
+  if (note.userEmail !== activeUser.email && activeUser.rol !== "admin") {
+    alert("No tienes permiso para editar esta nota.");
+    return;
+  }
+
   const newTitle = prompt("Editar título:", note.title);
   const newContent = prompt("Editar contenido:", note.content);
 
@@ -98,12 +104,21 @@ window.editNote = function (id) {
 
 // Eliminar una nota
 window.deleteNote = function (id) {
-  if (!confirm("¿Estás seguro de eliminar esta nota?")) return;
+    const notes = getNotes();
+    const note = notes.find(n => n.id === id);
+    if (!note) return;
 
-  let notes = getNotes();
-  notes = notes.filter(n => n.id !== id);
-  saveNotes(notes);
-  displayNotes();
+  // Seguridad: solo el dueño o el admin pueden eliminar
+    if (note.userEmail !== activeUser.email && activeUser.rol !== "admin") {
+    alert("No tienes permiso para eliminar esta nota.");
+    return;
+}
+
+    if (!confirm("¿Estás seguro de eliminar esta nota?")) return;
+
+    const filteredNotes = notes.filter(n => n.id !== id);
+    saveNotes(filteredNotes);
+    displayNotes();
 
   // Aquí se registrará un log en la tarea de registrar los logs
 };
