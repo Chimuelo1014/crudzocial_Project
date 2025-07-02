@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Carrusel Simple</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style="background-color: aquamarine;">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-bold" href="#" style="color: black;">
+                Mi Sitio
+            </a>
+
+            <!-- Botón hamburguesa con íconos en negro -->
+            <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarMenu" style="color: black;">
+                <span aria-hidden="true" style="background-color: black;"></span>
+                <span aria-hidden="true" style="background-color: black;"></span>
+                <span aria-hidden="true" style="background-color: black;"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="./profile.html" style="color: black;">Perfil</a>
+                <a class="navbar-item" href="./images.html" style="color: black;">Imágenes</a>
+                <a class="navbar-item" href="#" style="color: black;">Notas</a>
+                <a class="navbar-item" href="#" style="color: black;">Logs</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burger = document.getElementById("burger");
+            const menu = document.getElementById("navbarMenu");
+
+            burger.addEventListener("click", () => {
+                burger.classList.toggle("is-active");
+                menu.classList.toggle("is-active");
+            });
+        });
+    </script>
+    <h1>Galería Carrusel</h1>
+
+    <div id="controls">
+        <input type="file" id="image-input" accept="image/*" />
+        <button>Agregar Imagen</button>
+    </div>
+
+    <div class="carousel" id="carousel"></div>
+
+    <p class="help-text">Haz clic en una imagen para eliminarla</p>
+
+    <script src="./js/images.js"></script>
+</body>
+
+</html>
