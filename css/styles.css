@@ -1,0 +1,126 @@
+:root {
+    --c1: #5AA88E;
+    --c2: #7FFFD4;
+    --c3: #B8E8DD;
+    --c4: #A0EACD;
+    --c5: #5D8370;
+    --c6: #F5FFFC;
+}
+
+body {
+    height: 98vh;
+    background-color: var(--c6);
+    color: #000; /* Asegura texto negro por defecto */
+}
+
+.section {
+    height: 100vh;
+    align-content: center;
+    background-color: rgba(90, 168, 142, 0.623); /* o var(--c1) con opacidad */
+}
+
+.navbar {
+    background-color: aquamarine; /* o var(--c2) */
+}
+
+/* Colores del texto en el navbar */
+.navbar .navbar-item,
+.navbar .navbar-link {
+    color: black !important;
+}
+
+/* Burger menu (iconos) en negro */
+.navbar-burger {
+    color: black !important;
+}
+
+.navbar-burger span {
+    background-color: black !important;
+}
+
+/* Opcional: estiliza los botones y cajas si usas Bulma o Bootstrap */
+.input,
+.button,
+.box {
+    border-radius: 6px;
+}
+
+/* Botones personalizados si no usas Bulma */
+.button {
+    background-color: var(--c1);
+    color: white;
+    border: none;
+}
+
+.button:hover {
+    background-color: var(--c5);
+}
+
+/* Formularios y cajas */
+.box {
+    background-color: var(--c4);
+    padding: 1rem;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+#controls input[type="file"] {
+    border: 2px solid var(--c1);
+    border-radius: 6px;
+    padding: 0.3rem;
+    background-color: var(--c6);
+    color: var(--c5);
+}
+
+#controls button {
+    background-color: var(--c1);
+    border: none;
+    color: var(--c6);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+    background-color: var(--c2);
+    color: var(--c5);
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px;
+    max-width: 90%;
+    margin-bottom: 1rem;
+    background-color: rgba(90, 168, 142, 0.15); /* Tono suave */
+    border-radius: 8px;
+}
+
+.carousel img {
+    max-height: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--c1);
+}
+
+.carousel img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.help-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--c5);
+    margin-bottom: 1rem;
+}
+
