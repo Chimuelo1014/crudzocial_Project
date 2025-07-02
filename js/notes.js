@@ -40,11 +40,12 @@ function displayNotes() {
     const noteElement = document.createElement("div");
     noteElement.className = "box";
     noteElement.innerHTML = `
-      <h3 class="title is-5">${note.title}</h3>
-      <p>${note.content}</p>
-      <p class="has-text-grey is-size-7">Creado: ${new Date(note.createdAt).toLocaleString()}</p>
-      <button class="button is-small is-warning" onclick="editNote('${note.id}')">Editar</button>
-      <button class="button is-small is-danger" onclick="deleteNote('${note.id}')">Eliminar</button>
+    <h3 class="title is-5">${note.title}</h3>
+    <p>${note.content}</p>
+    <p class="has-text-grey is-size-7">Creado: ${new Date(note.createdAt).toLocaleString()}</p>
+    ${isAdmin ? `<p class="has-text-info is-size-7">Autor: ${note.userEmail}</p>` : ""}
+    <button class="button is-small is-warning mt-2" onclick="editNote('${note.id}')">Editar</button>
+    <button class="button is-small is-danger mt-2" onclick="deleteNote('${note.id}')">Eliminar</button>
     `;
     notesContainer.appendChild(noteElement);
   });
