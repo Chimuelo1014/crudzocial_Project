@@ -24,13 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let user = users.find(u => u.email === email);
 
     if (!user) {
-      // Si no existe, lo registramos como usuario común con la contraseña escrita
+      // Si no existe, lo registramos como usuario común
       user = { email, password, rol: "comun" };
       users.push(user);
       localStorage.setItem("usuarios", JSON.stringify(users));
       alert("Usuario creado con éxito");
     } else {
-      // Si existe, validamos la contraseña
       if (user.password !== password) {
         return alert("Contraseña incorrecta");
       }
@@ -38,11 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Guardar sesión activa
     sessionStorage.setItem("sesionActiva", JSON.stringify(user));
+    localStorage.setItem("usuarioActual", JSON.stringify(user)); // Necesario para profile.html
 
     // Guardar log
     const logs = JSON.parse(localStorage.getItem("logs")) || [];
     logs.push({
-      usuario: user.email,
+      email: user.email,
       accion: "Inicio de sesión",
       fecha: new Date().toISOString()
     });
