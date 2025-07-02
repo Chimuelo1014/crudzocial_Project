@@ -1,5 +1,5 @@
 // Verificar sesión activa
-const activeUser = JSON.parse(sessionStorage.getItem("activeUser"));
+const activeUser = JSON.parse(sessionStorage.getItem("sesionActiva"));
 if (!activeUser) {
   window.location.href = "index.html";
 }
@@ -24,7 +24,7 @@ function saveNotes(notes) {
 // Mostrar todas las notas del usuario (o todas si es admin)
 function displayNotes() {
   const notes = getNotes();
-  const isAdmin = activeUser.role === "admin";
+  const isAdmin = activeUser.rol === "admin";
   const userNotes = isAdmin
     ? notes
     : notes.filter(note => note.userEmail === activeUser.email);
