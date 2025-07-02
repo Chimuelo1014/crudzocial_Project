@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil - Crudzocial</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style="background-color: aquamarine;">
+    <div class="navbar-brand">
+      <a class="navbar-item has-text-weight-bold" href="#" style="color: black;">
+        Mi Sitio
+      </a>
+
+      <!-- Botón hamburguesa con íconos en negro -->
+      <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarMenu" style="color: black;">
+        <span aria-hidden="true" style="background-color: black;"></span>
+        <span aria-hidden="true" style="background-color: black;"></span>
+        <span aria-hidden="true" style="background-color: black;"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#" style="color: black;">Perfil</a>
+        <a class="navbar-item" href="./images.html" style="color: black;">Imágenes</a>
+        <a class="navbar-item" href="#" style="color: black;">Notas</a>
+        <a class="navbar-item" href="#" style="color: black;">Logs</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("navbarMenu");
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("is-active");
+        menu.classList.toggle("is-active");
+      });
+    });
+  </script>
+
+
+
+  <!-- Contenido nuevo -->
+  <section class="section" style="background-color: var(--c3); min-height: 100vh;">
+    <div class="container">
+      <h1 class="title has-text-primary">Mi Perfil</h1>
+
+      <form id="perfilForm" class="box" style="background-color: var(--c6);">
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <label class="label">Nombre</label>
+            <input id="nombre" class="input" type="text" required />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Apellido</label>
+            <input id="apellido" class="input" type="text" required />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Email</label>
+            <input id="email" class="input" type="email" required />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Teléfono</label>
+            <input id="telefono" class="input" type="tel" />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">País</label>
+            <input id="pais" class="input" type="text" />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Ciudad</label>
+            <input id="ciudad" class="input" type="text" />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Dirección</label>
+            <input id="direccion" class="input" type="text" />
+          </div>
+
+          <div class="column is-half">
+            <label class="label">Código Postal</label>
+            <input id="postal" class="input" type="text" />
+          </div>
+        </div>
+
+        <div class="buttons mt-4">
+          <button type="submit" class="button is-link">Guardar Cambios</button>
+          <button type="button" id="logout" class="button is-danger">Cerrar Sesión</button>
+        </div>
+      </form>
+
+      <hr />
+      <h2 class="subtitle has-text-weight-semibold">Resumen de Actividad</h2>
+      <div id="logs" class="box" style="background-color: var(--c4);"></div>
+    </div>
+  </section>
+
+  <!-- JS optimizado -->
+  <script src="./js/profile.js"></script>
+</body>
+
+</html>
 
