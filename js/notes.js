@@ -63,6 +63,32 @@ function displayNotes() {
   });
 }
 
+function displayLogs() {
+  const logsContainer = document.getElementById("logsContainer");
+  const logs = JSON.parse(localStorage.getItem("logs")) || [];
+  const isAdmin = activeUser.rol === "admin";
+
+  const userLogs = isAdmin
+    ? logs
+    : logs.filter(log => log.userEmail === activeUser.email);
+
+  if (userLogs.length === 0) {
+    logsContainer.innerHTML = "<p>No hay actividad registrada.</p>";
+    return;
+  }
+
+  logsContainer.innerHTML = "<ul>";
+  userLogs.reverse().forEach(log => {
+    logsContainer.innerHTML += `
+      <li>
+        <strong>${log.userEmail}</strong> — ${log.action} —
+        <span class="has-text-grey is-size-7">${new Date(log.timestamp).toLocaleString()}</span>
+      </li>
+    `;
+  });
+  logsContainer.innerHTML += "</ul>";
+}
+
 // Crear una nueva nota
 noteForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -87,6 +113,7 @@ noteForm.addEventListener("submit", (e) => {
   noteForm.reset();
 
   addLog("crear nota");
+  displayLogs();
 });
 
 // Editar una nota
@@ -111,6 +138,7 @@ window.editNote = function (id) {
     displayNotes();
 
     addLog("editar nota");
+    displayLogs();
   }
 };
 
@@ -132,6 +160,7 @@ window.deleteNote = function (id) {
   displayNotes();
 
   addLog("eliminar nota");
+  displayLogs();
 };
 
 // Cerrar sesión
@@ -142,3 +171,4 @@ logoutBtn.addEventListener("click", () => {
 
 // Cargar notas al iniciar
 displayNotes();
+displayLogs();
