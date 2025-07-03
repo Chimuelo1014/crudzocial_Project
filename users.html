@@ -10,43 +10,6 @@
 </head>
 
 <body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style="background-color: aquamarine;">
-    <div class="navbar-brand">
-      <a class="navbar-item has-text-weight-bold" href="./profile.html" style="color: black;">
-        Crudzocial
-      </a>
-
-      <!-- Botón hamburguesa con íconos en negro -->
-      <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarMenu" style="color: black;">
-        <span aria-hidden="true" style="background-color: black;"></span>
-        <span aria-hidden="true" style="background-color: black;"></span>
-        <span aria-hidden="true" style="background-color: black;"></span>
-      </a>
-    </div>
-
-
-
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="./profile.html" style="color: black;">Perfil</a>
-        <a class="navbar-item" href="./images.html" style="color: black;">Imágenes</a>
-        <a class="navbar-item" href="./notes.html" style="color: black;">Notas</a>
-      </div>
-    </div>
-  </nav>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const burger = document.getElementById("burger");
-      const menu = document.getElementById("navbarMenu");
-
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("is-active");
-        menu.classList.toggle("is-active");
-      });
-    });
-  </script>
   <section class="section">
     <div class="container">
       <h1 class="title has-text-centered">Panel de Administración</h1>
