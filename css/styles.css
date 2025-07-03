@@ -8,7 +8,7 @@
 }
 
 body {
-    height: 98vh;
+    height: 100vh;
     background-color: var(--c6);
     color: #000; /* Asegura texto negro por defecto */
 }
