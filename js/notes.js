@@ -1,9 +1,7 @@
-// Verificar sesión activa
 const activeUser = JSON.parse(sessionStorage.getItem("sesionActiva"));
 if (!activeUser) {
   window.location.href = "index.html";
 }
-
 // Función para registrar logs
 function addLog(action) {
   const logs = JSON.parse(localStorage.getItem("logs")) || [];
