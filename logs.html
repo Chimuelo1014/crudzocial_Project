@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Actividad - Crudzocial</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Historial de Actividad</h1>
+
+      <div class="field is-grouped is-justify-content-center mt-5">
+        <p class="control">
+          <input class="input" type="text" id="filtroUsuario" placeholder="Filtrar por usuario (email)">
+        </p>
+        <p class="control">
+          <input class="input" type="text" id="filtroAccion" placeholder="Filtrar por acción (crear, eliminar...)">
+        </p>
+        <p class="control">
+          <button class="button is-info" id="btnFiltrar">Filtrar</button>
+        </p>
+      </div>
+
+      <div id="logContainer" class="mt-5"></div>
+
+      <div class="has-text-centered mt-5">
+        <a href="profile.html" class="button is-link">Volver</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/logs.js"></script>
+</body>
+</html>
