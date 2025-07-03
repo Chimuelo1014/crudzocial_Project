@@ -12,8 +12,8 @@
 <body>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation" style="background-color: aquamarine;">
         <div class="navbar-brand">
-            <a class="navbar-item has-text-weight-bold" href="#" style="color: black;">
-                Mi Sitio
+            <a class="navbar-item has-text-weight-bold" href="./profile.html" style="color: black;">
+                Crudzocial
             </a>
 
             <!-- Botón hamburguesa con íconos en negro -->
@@ -25,12 +25,13 @@
             </a>
         </div>
 
+
+
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
                 <a class="navbar-item" href="./profile.html" style="color: black;">Perfil</a>
                 <a class="navbar-item" href="./images.html" style="color: black;">Imágenes</a>
                 <a class="navbar-item" href="./notes.html" style="color: black;">Notas</a>
-                <a class="navbar-item" href="#" style="color: black;">Logs</a>
             </div>
         </div>
     </nav>
@@ -46,7 +47,7 @@
             });
         });
     </script>
-    <h1>Galería Carrusel</h1>
+    <h1 class="titulo">Galería Carrusel</h1>
 
     <div id="controls">
         <input type="file" id="image-input" accept="image/*" />
@@ -56,8 +57,11 @@
     <div class="carousel" id="carousel"></div>
 
     <p class="help-text">Haz clic en una imagen para eliminarla</p>
+    <h2 class="titulo">Logs</h2>
+    <div id="logs" class="box" style="max-height: 200px; overflow-y: auto; font-size: 0.9em;"></div>
 
     <script src="./js/images.js"></script>
+
 </body>
 
 </html>
