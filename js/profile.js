@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const user = JSON.parse(localStorage.getItem("usuarioActual"));
       if (!user || typeof user !== "object" || !user.email) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
       }
-
+      
       campos.forEach(campo => {
         const input = document.getElementById(campo);
         if (input) input.value = user[campo] || "";
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       mostrarLogs(user.email);
     } catch {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
   };
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cerrarSesion = () => {
     localStorage.removeItem("usuarioActual");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   };
 
   form.addEventListener("submit", (e) => {
