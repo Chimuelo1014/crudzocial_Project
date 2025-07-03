@@ -1,6 +1,6 @@
 // Validar si el usuario activo está logueado y es admin
-const usuarioActivo = JSON.parse(sessionStorage.getItem('usuarioActivo'));
-if (!usuarioActivo || usuarioActivo.rol !== 'admin') {
+const usuarioActual = JSON.parse(sessionStorage.getItem('usuarioActual'));
+if (!usuarioActual || usuarioActual.rol !== 'admin') {
   location.href = 'login.html';
 }
 
